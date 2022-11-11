@@ -15,3 +15,9 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+## Benefits
+1. Easy lookup for everything best practice related
+2. Serves as a tips & tricks guide for everything on databricks
+3. Internally help SAs to address best practices related questions quickly and easily
+4. Best practices can change, but often at a slow pace, so maintaining the guide isn't too difficult. 

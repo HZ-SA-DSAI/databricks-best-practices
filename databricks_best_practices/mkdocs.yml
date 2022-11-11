@@ -1,2 +1,11 @@
 site_name: Databricks Best Practices
+nav:
+  - Home: index.md
+  - Admin:
+    - Cluster Configuration: 'Admin/cluster_configuration.md'
+  - Data Engineering:
+    - Delta Lake: 'DE/delta_lake.md'
+  - Machine Learning:
+    - Deep Learning: 'ML/deep_learning.md'
+    - MLOps: 'ML/mlops.md'
 theme: readthedocs
