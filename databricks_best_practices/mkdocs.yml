@@ -3,9 +3,16 @@ nav:
   - Home: index.md
   - Admin:
     - Cluster Configuration: 'Admin/cluster_configuration.md'
+    - Notebook Usage: 'Admin/notebook.md'
   - Data Engineering:
     - Delta Lake: 'DE/delta_lake.md'
+    - Delta Live Tables: 'DE/dlt.md'
+    - Workflows: 'DE/workflows.md'
   - Machine Learning:
-    - Deep Learning: 'ML/deep_learning.md'
     - MLOps: 'ML/mlops.md'
-theme: readthedocs
+    - Deep Learning: 'ML/deep_learning.md'
+    - Hyperparameter tuning with Hyperopt: 'ML/hyperparameter_tuning.md'
+theme:
+  name: mkdocs
+  nav_style: dark
+  include_sidebar: False
