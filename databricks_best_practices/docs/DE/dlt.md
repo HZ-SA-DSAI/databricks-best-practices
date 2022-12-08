@@ -1,3 +1,5 @@
+# Delta Live Tables
+
 1. [Make expectations portable and reusable](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#make-expectations-portable-and-reusable)
     1. Maintain data quality rules separately from your pipeline implementations.
     2. Store the rules in a format that is reliable and easy to access and update, for example, a text file stored in DBFS or cloud storage or a Delta table.

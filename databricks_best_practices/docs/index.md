@@ -1,23 +1,15 @@
 # Databricks Best Practices
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Purposes
 
-## Commands
+Central repository for all official publically available best practices on databricks tools and features, found on [http://docs.databricks.com](http://docs.databricks.com)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Audience
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+External customers and community members, internal Databricks solution architects
 
 ## Benefits
 1. Easy lookup for everything best practice related
-2. Serves as a tips & tricks guide for everything on databricks
+2. Serves as a tips & tricks guide for all things on databricks
 3. Internally help SAs to address best practices related questions quickly and easily
-4. Best practices can change, but often at a slow pace, so maintaining the guide isn't too difficult. 
+4. Best practices can change, but often at a slow pace, so maintaining the guide isn't difficult. 

@@ -1,3 +1,5 @@
+# Notebook Usage
+
 1. [Set up Databricks Repos](https://docs.databricks.com/notebooks/best-practices.html#step-1-set-up-databricks-repos)
     1. Provide your GitHub credentials
     2. Connect to your GitHub repo

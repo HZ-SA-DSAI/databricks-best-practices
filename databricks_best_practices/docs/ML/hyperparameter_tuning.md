@@ -1,3 +1,5 @@
+# Hyperparameter Tuning
+
 1. Use Hyperopt Tree of Parzen Estimators (TPE) algorithm
     1. Using domain knowledge to restrict the search domain can optimize tuning and produce better results.
     2. Bayesian approaches can be much more efficient than grid search and random search. 

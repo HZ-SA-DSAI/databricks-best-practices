@@ -1,3 +1,5 @@
+# Deep Learning
+
 1. [Customize the development environment](https://docs.databricks.com/machine-learning/train-model/dl-best-practices.html#customize-the-development-environment)
     1. Use notebook-scoped Python libraries or notebook-scoped R libraries to use a specific set or version of libraries without affecting other cluster users.
     2. Install libraries at the cluster level to standardize versions for a team or a project.

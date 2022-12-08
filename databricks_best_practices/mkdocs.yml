@@ -4,6 +4,9 @@ nav:
   - Admin:
     - Cluster Configuration: 'Admin/cluster_configuration.md'
     - Notebook Usage: 'Admin/notebook.md'
+  - SQL:
+    - Queries: 'SQL/queries.md'
+    - SQL Warehouses: 'SQL/warehouses.md'
   - Data Engineering:
     - Delta Lake: 'DE/delta_lake.md'
     - Delta Live Tables: 'DE/dlt.md'
@@ -15,4 +18,4 @@ nav:
 theme:
   name: mkdocs
   nav_style: dark
-  include_sidebar: False
+  
