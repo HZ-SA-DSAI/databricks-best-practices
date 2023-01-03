@@ -16,6 +16,8 @@ nav:
     - MLOps: 'ML/mlops.md'
     - Deep Learning: 'ML/deep_learning.md'
     - Hyperparameter tuning with Hyperopt: 'ML/hyperparameter_tuning.md'
+  - Unity Catalog:
+    - Unity Catalog: 'UC/uc.md'
 theme:
   name: mkdocs
   nav_style: dark
