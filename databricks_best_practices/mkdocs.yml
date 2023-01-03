@@ -13,6 +13,7 @@ nav:
     - Delta Lake: 'DE/delta_lake.md'
     - Delta Live Tables: 'DE/dlt.md'
     - Workflows: 'DE/workflows.md'
+    - Clone: 'DE/clone.md'
   - Machine Learning:
     - MLOps: 'ML/mlops.md'
     - Deep Learning: 'ML/deep_learning.md'

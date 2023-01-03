@@ -8,7 +8,7 @@
     
     Compact a table using the OPTIMIZE command to rewrite large number of small files into a smaller number of larger files on a regular basis.
 
-3. [Carefully consider how to replacee the content or schema of a table](https://docs.databricks.com/delta/best-practices.html#replace-the-content-or-schema-of-a-table)
+3. [Carefully consider how to replace the content or schema of a table](https://docs.databricks.com/delta/best-practices.html#replace-the-content-or-schema-of-a-table)
     1. If you don’t need to change the table schema, you can delete data from a Delta table and insert your new data, or update the table to fix the incorrect values.
     2. If you want to change the table schema, you can replace the whole table atomically. 
     3. If you want to delete old files to save storage cost after overwriting the table, you can use VACUUM to delete them.
