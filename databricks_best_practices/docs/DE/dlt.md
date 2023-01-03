@@ -1,47 +1,41 @@
-# Delta Live Tables
+# Delta Live Tables best practices
 
-1. [Make expectations portable and reusable](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#make-expectations-portable-and-reusable)
-    1. Maintain data quality rules separately from your pipeline implementations.
-    2. Store the rules in a format that is reliable and easy to access and update, for example, a text file stored in DBFS or cloud storage or a Delta table.
-2. [Use Python UDFs in SQL](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#use-python-udfs-in-sql)
-    
-    You want the simplicity of SQL to define Delta Live Tables datasets but need transformations not directly supported in SQL.
+1. To ensure your pipelines are efficient and maintainable, choose the best dataset type, either a table or a view, when you implement your pipeline queries.
 
-3. [Use MLFlow models in a Delta Live Tables pipeline](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#use-mlflow-models-in-a-delta-live-tables-pipeline)
-    1. Obtain the run ID and model name of the MLFlow model. 
-    2. Use the URI to define a Spark UDF to load the MLFlow model.
-    3. Call the UDF in your table definitions to use the MLFlow model.
-4. [Create sample datasets for development and testing](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#create-sample-datasets-for-development-and-testing)
-    1. Implement your transformation logic in a single or shared set of notebooks.
-    2. Then create separate notebooks to define multiple datasets based on environment.
-    3. Then create notebooks that define a sample of data based on requirements. 
-    4. To use these different datasets, create multiple pipelines with the notebooks implementing the transformation logic. 
-5. [Programmatically manage and create multiple live tables](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#programmatically-manage-and-create-multiple-live-tables)
-    1. You can use a metaprogramming pattern to reduce the overhead of generating and maintaining redundant flow definitions. 
-    2. Metaprogramming in Delta Live Tables is done using Python inner functions.
-    3. Because these functions are lazily evaluated, you can use them to create flows that are identical except for input parameters.
-    4. Each invocation can include a different set of parameters that controls how each table should be generated
-6. [Quarantine invalid data](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#quarantine-invalid-data)
-    
-    Create rules that are the inverse of the expectations you’ve defined and use those rules to save the invalid records to a separate table. You can programmatically create these inverse rules. 
+2. Consider using a view when:
 
-    A disadvantage of the above approach is that it generates the quarantine table by processing the data twice. If you don’t want this performance overhead, you can use the constraints directly within a query to generate a column indicating the validation status of a record. You can then partition the table by this column for further optimization.
+    1. You have a large or complex query that you want to break into easier-to-manage queries.
+    2. You want to validate intermediate results using expectations.
+    3. You want to reduce storage and compute costs and do not require the materialization of query results. Because tables are materialized, they require additional computation and storage resources.
 
-7. [Validate row counts across tables](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#validate-row-counts-across-tables)
-    1. You need to compare row counts between two live tables, perhaps to verify that data was processed successfully without dropping rows.
-    2. Add an additional table to your pipeline that defines an expectation to perform the comparison. 
-8. [Use secrets in a pipeline](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#use-secrets-in-a-pipeline)
-    
-    Use Databricks [secrets](https://docs.databricks.com/security/secrets/index.html) to store credentials such as access keys or passwords. To configure the secret in your pipeline, use a Spark property in the [pipeline settings](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-configuration.html) cluster configuration.
+3. Consider using a table when:
 
-9. [Define limits on pipeline clusters](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#define-limits-on-pipeline-clusters)
+    1. Multiple downstream queries consume the table. Because views are computed on demand, the view is re-computed every time the view is queried.
+    2. The table is consumed by other pipelines, jobs, or queries. Because views are not materialized, you can only use them in the same pipeline.
+    3. You want to view the results of a query during development. Because tables are materialized and can be viewed and queried outside of the pipeline, using tables during development can help validate the correctness of computations. After validating, convert queries that do not require materialization into views.
 
-    [Cluster policies](https://docs.databricks.com/administration-guide/clusters/policies.html) allow you to define templates that limit user access to cluster configuration. You can define one or more cluster policies to use when configuring pipelines.
+4. Do not override the Spark version in your pipeline configuration
 
-    To create a cluster policy for Delta Live Tables pipelines, define a cluster policy with the cluster_type field set to dlt.
+    Because Delta Live Tables clusters run on a custom version of Databricks Runtime, you cannot manually set the Spark version in cluster configurations. Manually setting a version may result in pipeline failures.
 
-10. [Perform advanced validation with Delta Live Tables expectations](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-cookbook.html#perform-advanced-validation-with-delta-live-tables-expectations)
+5. Use larger pipelines to:
 
-    You can define live tables using aggregate and join queries and use the results of those queries as part of your expectation checking. 
-    
-    To prevent persistence of the table used in the validation, use the TEMPORARY keyword in the table definition.
+    1. More efficiently use cluster resources.
+    2. Reduce the number of pipelines in your workspace.
+    3. Reduce the complexity of workflow orchestration.
+
+6. Use more than one pipeline to:
+
+    1. Split functionality at team boundaries. For example, your data team may maintain pipelines to transform data while your data analysts maintain pipelines that analyze the transformed data.
+    2. Split functionality at application-specific boundaries to reduce coupling and facilitate the re-use of common functionality.
+
+7. Use autoscaling to increase efficiency and reduce resource usage
+
+    Use [Enhanced Autoscaling](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-concepts.html#auto-scaling) to optimize the cluster utilization of your pipelines. Enhanced Autoscaling adds additional resources only if the system determines those resources will increase pipeline processing speed. Resources are freed as soon as they are no longer needed, and clusters are shut down as soon as all pipeline updates complete.
+
+    Leave the Min workers setting at the default.
+
+    Set the Max workers setting to a value based on budget and pipeline priority.
+
+    Leave instance types unset to allow the Delta Live Tables runtime to pick the best instance types for your workload.
+

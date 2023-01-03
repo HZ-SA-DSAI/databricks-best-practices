@@ -11,7 +11,8 @@ nav:
     - SQL Warehouses: 'SQL/warehouses.md'
   - Data Engineering:
     - Delta Lake: 'DE/delta_lake.md'
-    - Delta Live Tables: 'DE/dlt.md'
+    - Delta Live Tables Best Practices: 'DE/dlt.md'
+    - Delta Live Tables Cookbook: 'DE/dlt_cookbook.md'
     - Workflows: 'DE/workflows.md'
     - Clone: 'DE/clone.md'
   - Machine Learning:
