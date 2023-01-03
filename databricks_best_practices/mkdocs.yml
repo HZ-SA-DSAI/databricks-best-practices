@@ -5,6 +5,7 @@ nav:
     - Cluster Configuration: 'Admin/cluster_configuration.md'
     - Notebook Usage: 'Admin/notebook.md'
     - CI/CD: 'Admin/cicd.md'
+    - Pools: 'Admin/pools.md'
   - SQL:
     - Queries: 'SQL/queries.md'
     - SQL Warehouses: 'SQL/warehouses.md'
