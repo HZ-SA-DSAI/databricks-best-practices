@@ -1,4 +1,7 @@
+***
 # Delta Lake
+
+**Updated on 01/04/2023**
 
 *See below for original doc on docs.databricks.com*
 
@@ -13,7 +16,7 @@
     Compact a table using the OPTIMIZE command to rewrite large number of small files into a smaller number of larger files on a regular basis.
 
 3. [Carefully consider how to replace the content or schema of a table](https://docs.databricks.com/delta/best-practices.html#replace-the-content-or-schema-of-a-table)
-    1. If you don’t need to change the table schema, you can delete data from a Delta table and insert your new data, or update the table to fix the incorrect values.
+    1. If you don’t need to change the table schema, you can [delete](https://docs.databricks.com/delta/tutorial.html#delete) data from a Delta table and insert your new data, or [update](https://docs.databricks.com/delta/tutorial.html#update) the table to fix the incorrect values.
     2. If you want to change the table schema, you can replace the whole table atomically. 
     3. If you want to delete old files to save storage cost after overwriting the table, you can use VACUUM to delete them.
 4. [Avoid Spark caching](https://docs.databricks.com/delta/best-practices.html#spark-caching)
@@ -34,5 +37,17 @@
     You can configure how stale your table data is by setting the Spark session configuration spark.databricks.delta.stalenessLimit with a time string value. 
 
 8. [Enhanced checkpoints for low-latency queries](https://docs.databricks.com/delta/best-practices.html#enhanced-checkpoints-for-low-latency-queries)
+
+    Delta Lake writes checkpoints as an aggregate state of a Delta table at an optimized frequency.These checkpoints serve as the starting point to compute the latest state of the table.
+
+    Delta Lake checkpoints are different than Structured Streaming checkpoints.
+
 9. [Manage column-level statistics in checkpoints](https://docs.databricks.com/delta/best-practices.html#manage-column-level-statistics-in-checkpoints)
+
+    You manage how statistics are written in checkpoints using the table properties delta.checkpoint.writeStatsAsJson and delta.checkpoint.writeStatsAsStruct. If both table properties are false, Delta Lake cannot perform data skipping.
+
 10. [Enable enhanced checkpoints for Structured Streaming queries](https://docs.databricks.com/delta/best-practices.html#enable-enhanced-checkpoints-for-structured-streaming-queries)
+
+    If your Structured Streaming workloads don’t have low latency requirements (subminute latencies), you can enable enhanced checkpoints. 
+
+    Databricks does not recommend disabling enhanced checkpoints as no statistics will be collected or written for data skipping purposes. 

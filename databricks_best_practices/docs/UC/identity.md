@@ -2,7 +2,7 @@
 
 *See below for original doc on docs.databricks.com*
 
-*[Identity best practices](https://docs.databricks.com/administration-guide/users-groups/best-practices.html#configure-users-service-principals-and-groups)*
+*[Identity best practices](https://docs.databricks.com/administration-guide/users-groups/best-practices.html#identity-best-practices)*
 
 1. [Configure users, service principals, and groups](https://docs.databricks.com/administration-guide/users-groups/best-practices.html#configure-users-service-principals-and-groups)
     1. Three types of Databricks identity:

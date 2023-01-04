@@ -1,4 +1,7 @@
+***
 # MLOps
+
+**Updated on 01/04/2023**
 
 *See below for original doc on docs.databricks.com*
 
@@ -17,8 +20,8 @@
 
 6. [Recommended MLOps workflow](https://docs.databricks.com/machine-learning/mlops/mlops-workflow.html#recommended-mlops-workflow)
     1. [Development](https://docs.databricks.com/machine-learning/mlops/mlops-workflow.html#development-stage-1)
-    ![Development](media/mlops-dev-diagram.png)
+    ![Development](https://docs.databricks.com/_images/mlops-dev-diagram.png)
     2. [Staging](https://docs.databricks.com/machine-learning/mlops/mlops-workflow.html#staging-stage-1)
-    ![Staging](media/mlops-staging-diagram.png)
+    ![Staging](https://docs.databricks.com/_images/mlops-staging-diagram.png)
     3. [Production](https://docs.databricks.com/machine-learning/mlops/mlops-workflow.html#production-stage-1)
-    ![Production](media/mlops-prod-diagram.png)
+    ![Production](https://docs.databricks.com/_images/mlops-prod-diagram.png)

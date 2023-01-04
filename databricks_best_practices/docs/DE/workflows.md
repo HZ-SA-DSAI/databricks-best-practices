@@ -1,21 +1,27 @@
+***
 # Workflows
+
+**Updated on 01/04/2023**
 
 *See below for original doc on docs.databricks.com*
 
 *[Create, run, and manage Databricks Jobs](https://docs.databricks.com/workflows/jobs/jobs.html#create-run-and-manage-databricks-jobs)*
 
 1. [Use shared job clusters](https://docs.databricks.com/workflows/jobs/jobs.html#use-shared-job-clusters)
-    1. To optimize resource usage with jobs that orchestrate multiple tasks, use shared job clusters. 
+
     2. A shared job cluster allows multiple tasks in the same job run to reuse the cluster.
     3. You can use a single job cluster to run all tasks that are part of the job, or multiple job clusters optimized for specific workloads.
     4. A shared job cluster is scoped to a single job run, and cannot be used by other jobs or runs of the same job.
     5. Libraries cannot be declared in a shared job cluster configuration. You must add dependent libraries in task settings.
+
 2. In production, Databricks recommends using new shared or task scoped clusters so that each job or task runs in a fully isolated environment.
 3. When you run a task on a new cluster, the task is treated as a data engineering (task) workload, subject to the task workload pricing. When you run a task on an existing all-purpose cluster, the task is treated as a data analytics (all-purpose) workload, subject to all-purpose workload pricing.
 4. Existing all-purpose clusters work best for tasks such as updating dashboards at regular intervals.
 5. To decrease new job cluster start time, create a [pool](https://docs.databricks.com/clusters/instance-pools/cluster-instance-pool.html#cluster-instance-pool) and configure the job’s cluster to use the pool.
-6. To take advantage of automatic [availability zones](https://docs.databricks.com/clusters/configure.html#availability-zones) (Auto-AZ), you must enable it with the Clusters API, setting awsattributes.zone_id = "auto". See Availability zones.
-7. Total notebook cell output (the combined output of all notebook cells) is subject to a 20MB size limit. Additionally, individual cell output is subject to an 8MB size limit. If total cell output exceeds 20MB in size, or if the output of an individual cell is larger than 8MB, the run is canceled and marked as failed.
+6. Choosing a specific availability zone (AZ) for a cluster is useful primarily if your organization has purchased reserved instances in specific availability zones. You can also configure the cluster to select an availability zone automatically based on available IPs in the workspace subnets, a feature known as [“Auto-AZ.” ](https://docs.databricks.com/clusters/configure.html#automatic-availability-zones-auto-az)
+7. Total notebook cell output (the combined output of all notebook cells) is subject to a 20MB size limit. Additionally, individual cell output is subject to an 8MB size limit. 
+
+    If total cell output exceeds 20MB in size, or if the output of an individual cell is larger than 8MB, the run is canceled and marked as failed.
 
     If you need help finding cells near or beyond the limit, run the notebook against an all-purpose cluster and use this [notebook autosave technique](https://kb.databricks.com/notebooks/notebook-autosave.html?_ga=2.111477389.868976919.1668462910-917306584.1665418964).
 

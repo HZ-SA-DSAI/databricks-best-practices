@@ -1,4 +1,7 @@
+***
 # Clone
+
+**Updated on 01/04/2023**
 
 *See below for original doc on docs.databricks.com*
 
@@ -36,13 +39,11 @@
 
     Other business units within a single organization may want to access the same data but may not require the latest updates. Instead of giving access to the source table directly, you can provide clones with different permissions for different business units. The performance of the clone can exceed that of a simple view.
 
-11. [Use clone to override table properties](https://docs.databricks.com/optimizations/clone.html#use-clone-to-override-table-properties)
+11. [Use clone to override table properties](https://docs.databricks.com/optimizations/clone.html#use-clone-to-override-table-properties). Table property overrides are particularly useful for:
 
-    Table property overrides are particularly useful for:
+    1. Annotating tables with owner or user information when sharing data with different business units.
 
-        1. Annotating tables with owner or user information when sharing data with different business units.
-
-        2. Archiving Delta tables and time travel is required. You can specify the log retention period independently for the archive table. For example:
+    2. Archiving Delta tables and time travel is required. You can specify the log retention period independently for the archive table.
 
 6. Important Notes: 
 

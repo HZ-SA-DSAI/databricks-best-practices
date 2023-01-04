@@ -2,11 +2,11 @@
 
 ## Purposes
 
-Central repository for all official publically available best practices on databricks tools and features, found on [http://docs.databricks.com](http://docs.databricks.com). 
+**Unofficial** central repository for all official publically available best practices on databricks tools and features, found on [http://docs.databricks.com](http://docs.databricks.com). 
 
 ## Last Update
 
-December 15th, 2022
+01/04/2023
 
 ## Disclaimer
 
