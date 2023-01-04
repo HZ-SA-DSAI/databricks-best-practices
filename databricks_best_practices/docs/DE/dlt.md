@@ -1,5 +1,9 @@
 # Delta Live Tables best practices
 
+*See below for original doc on docs.databricks.com*
+
+*[Delta Live Tables best practices](https://docs.databricks.com/workflows/delta-live-tables/delta-live-tables-best-practices.html#delta-live-tables-best-practices)*
+
 1. To ensure your pipelines are efficient and maintainable, choose the best dataset type, either a table or a view, when you implement your pipeline queries.
 
 2. Consider using a view when:

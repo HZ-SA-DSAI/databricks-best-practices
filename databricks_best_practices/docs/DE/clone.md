@@ -1,5 +1,9 @@
 # Clone
 
+*See below for original doc on docs.databricks.com*
+
+*[Clone a table on Databricks](https://docs.databricks.com/optimizations/clone.html#clone-a-table-on-databricks)*
+
 1. You can create a copy of an existing Delta Lake table on Databricks at a specific version using the clone command. Clones can be either deep or shallow.
 
 2. Clone is a Databricks-exclusive feature enabled in the Databricks Runtime by default.

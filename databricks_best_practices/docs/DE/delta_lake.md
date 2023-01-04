@@ -1,5 +1,9 @@
 # Delta Lake
 
+*See below for original doc on docs.databricks.com*
+
+*[Best practices: Delta Lake](https://docs.databricks.com/delta/best-practices.html#best-practices-delta-lake)*
+
 1. [Provide data location hints](https://docs.databricks.com/delta/best-practices.html#provide-data-location-hints)
     
     If you expect a column to be commonly used in query predicates and if that column has high cardinality (that is, a large number of distinct values), then use Z-ORDER BY

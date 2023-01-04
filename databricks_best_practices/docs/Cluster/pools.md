@@ -1,5 +1,9 @@
 # Pools
 
+*See below for original doc on docs.databricks.com*
+
+*[Best practices: pools](https://docs.databricks.com/clusters/instance-pools/pool-best-practices.html#best-practices-pools)*
+
 1. Databricks [pools](https://docs.databricks.com/clusters/instance-pools/index.html) reduce cluster start and scale-up times by maintaining a set of available, ready-to-use instances.
 
 2. How do pools work?

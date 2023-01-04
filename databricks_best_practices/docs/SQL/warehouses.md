@@ -1,5 +1,9 @@
 # SQL Warehouses
 
+*See below for original doc on docs.databricks.com*
+
+*[What is a Databricks SQL warehouse?](https://docs.databricks.com/sql/admin/sql-endpoints.html#what-is-a-databricks-sql-warehouse)*
+
 1. [Use SQL Serverless to simplify SQL warehouse management and accelerate launch times](https://docs.databricks.com/serverless-compute/index.html)
 2. [Understand the feature differences among serverless, pro, and classic SQL warehouses](https://docs.databricks.com/sql/admin/warehouse-type.html#comparing-features-of-serverless-pro-and-classic-sql-warehouses)
     1. Pro allows Predictive I/O, Query federation, Workflows integration, and Geospatial functions compared with Classic

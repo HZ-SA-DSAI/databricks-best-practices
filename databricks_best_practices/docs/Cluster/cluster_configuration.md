@@ -1,5 +1,9 @@
 # Cluster Configuration
 
+*See below for original doc on docs.databricks.com*
+
+*[Best practices: Cluster configuration](https://docs.databricks.com/clusters/cluster-config-best-practices.html#best-practices-cluster-configuration)*
+
 1. [Choose between all purpose clusters and job clusters](https://docs.databricks.com/clusters/cluster-config-best-practices.html#all-purpose-clusters-and-job-clusters)
     1. All-purpose clusters can be shared by multiple users and are best for performing ad-hoc analysis, data exploration, or development. 
     2. Job clusters help reducing resource usage and cost.

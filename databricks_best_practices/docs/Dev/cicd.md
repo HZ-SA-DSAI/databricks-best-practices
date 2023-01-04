@@ -1,5 +1,11 @@
 # CI/CD
 
+*See below for original doc on docs.databricks.com*
+
+*[Use CI/CD](https://docs.databricks.com/dev-tools/index-ci-cd.html#use-cicd)*
+
+*[CI/CD with Jenkins on Databricks](https://docs.databricks.com/dev-tools/ci-cd/ci-cd-jenkins.html)*
+
 1. GitHub Actions
     1. [databricks/run-notebook](https://github.com/databricks/run-notebook/#run-notebook-v0): Executes a Databricks notebook as a one-time Databricks job run, awaits its completion, and returns the notebook’s output.
     2. [databricks/upload-dbfs-temp](https://github.com/databricks/upload-dbfs-temp/#upload-dbfs-temp-v0): Uploads a file to a temporary DBFS path for the duration of the current GitHub Workflow job. Returns the path of the DBFS tempfile.

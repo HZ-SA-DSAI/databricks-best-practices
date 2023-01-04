@@ -1,5 +1,9 @@
 # Queries
 
+*See below for original doc on docs.databricks.com*
+
+*[Query tasks](https://docs.databricks.com/sql/user/queries/queries.html#query-tasks)*
+
 1. [Organize queries into folders in the workspace browser](https://docs.databricks.com/sql/user/queries/queries.html#organize-queries-into-folders-in-the-workspace-browser)
 2. [You can create a query, visualization, and dashboard using Terraform](https://docs.databricks.com/sql/user/queries/queries.html#create-a-query-using-terraform)
 3. [You can set query metadata including description and tags](https://docs.databricks.com/sql/user/queries/queries.html#set-query-description-and-view-query-info)

@@ -1,5 +1,9 @@
 # Unity Catalog
 
+*See below for original doc on docs.databricks.com*
+
+*[Unity Catalog best practices](https://docs.databricks.com/data-governance/unity-catalog/best-practices.html#unity-catalog-best-practices)*
+
 1. [Configure a Unity Catalog metastore](https://docs.databricks.com/data-governance/unity-catalog/best-practices.html#configure-a-unity-catalog-metastore)
 
     1. The following diagram illustrates the main securable objects in Unity Catalog:

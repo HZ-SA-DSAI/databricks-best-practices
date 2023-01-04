@@ -1,26 +1,28 @@
 site_name: Databricks Best Practices
 nav:
   - Home: index.md
-  - Admin:
-    - Cluster Configuration: 'Admin/cluster_configuration.md'
-    - Notebook Usage: 'Admin/notebook.md'
-    - CI/CD: 'Admin/cicd.md'
-    - Pools: 'Admin/pools.md'
-  - SQL:
-    - Queries: 'SQL/queries.md'
-    - SQL Warehouses: 'SQL/warehouses.md'
   - Data Engineering:
     - Delta Lake: 'DE/delta_lake.md'
+    - Workflows: 'DE/workflows.md'
     - Delta Live Tables Best Practices: 'DE/dlt.md'
     - Delta Live Tables Cookbook: 'DE/dlt_cookbook.md'
-    - Workflows: 'DE/workflows.md'
     - Clone: 'DE/clone.md'
   - Machine Learning:
     - MLOps: 'ML/mlops.md'
     - Deep Learning: 'ML/deep_learning.md'
     - Hyperparameter tuning with Hyperopt: 'ML/hyperparameter_tuning.md'
-  - Unity Catalog:
+  - SQL:
+    - SQL Warehouses: 'SQL/warehouses.md'
+    - Queries: 'SQL/queries.md'
+  - Unity Catalog & Admin:
     - Unity Catalog: 'UC/uc.md'
+    - Identity: 'UC/identity.md'
+  - Cluster Management:
+    - Cluster Configuration: 'Admin/cluster_configuration.md'
+    - Pools: 'Admin/pools.md'
+  - Development:
+    - CI/CD: 'Admin/cicd.md'
+    - Notebook Usage: 'Admin/notebook.md'
 theme:
   name: mkdocs
   nav_style: dark

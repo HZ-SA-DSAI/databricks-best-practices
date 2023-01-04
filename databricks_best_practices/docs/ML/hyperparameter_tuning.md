@@ -1,5 +1,9 @@
 # Hyperparameter Tuning
 
+*See below for original doc on docs.databricks.com*
+
+*[Best practices: Hyperparameter tuning with Hyperopt](https://docs.databricks.com/machine-learning/automl-hyperparam-tuning/hyperopt-best-practices.html#best-practices-hyperparameter-tuning-with-hyperopt)*
+
 1. Use Hyperopt Tree of Parzen Estimators (TPE) algorithm
     1. Using domain knowledge to restrict the search domain can optimize tuning and produce better results.
     2. Bayesian approaches can be much more efficient than grid search and random search. 
