@@ -18,11 +18,11 @@ nav:
     - Unity Catalog: 'UC/uc.md'
     - Identity: 'UC/identity.md'
   - Cluster Management:
-    - Cluster Configuration: 'Admin/cluster_configuration.md'
-    - Pools: 'Admin/pools.md'
+    - Cluster Configuration: 'Cluster/cluster_configuration.md'
+    - Pools: 'Cluster/pools.md'
   - Development:
-    - CI/CD: 'Admin/cicd.md'
-    - Notebook Usage: 'Admin/notebook.md'
+    - CI/CD: 'Dev/cicd.md'
+    - Notebook Usage: 'Dev/notebook.md'
 theme:
   name: mkdocs
   nav_style: dark
