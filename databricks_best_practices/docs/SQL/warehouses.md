@@ -1,4 +1,7 @@
+***
 # SQL Warehouses
+
+**Updated on 01/04/2023**
 
 *See below for original doc on docs.databricks.com*
 

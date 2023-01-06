@@ -1,4 +1,7 @@
+***
 # Notebook Usage
+
+Updated on 01/06/2023
 
 *See below for original doc on docs.databricks.com*
 
@@ -10,7 +13,7 @@
 2. [Import and run the notebook](https://docs.databricks.com/notebooks/best-practices.html#step-2-import-and-run-the-notebook)
     1. Create a working branch in the repo
 
-        If you’re not familiar with working in [Git branches, see Git Branches - Branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in a Nutshell on the Git website.
+        If you’re not familiar with working in Git branches, see [Git Branches - Branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in a Nutshell on the Git website.
 
     2. Import the notebook into the repo
     3. [Check in and merge the notebook](https://docs.databricks.com/notebooks/best-practices.html#step-24-check-in-and-merge-the-notebook)
