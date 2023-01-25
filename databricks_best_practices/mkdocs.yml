@@ -7,6 +7,7 @@ nav:
     - Delta Live Tables Best Practices: 'DE/dlt.md'
     - Delta Live Tables Cookbook: 'DE/dlt_cookbook.md'
     - Clone: 'DE/clone.md'
+    - Optimization Recommendations: 'DE/optimization.md'
   - Machine Learning:
     - MLOps: 'ML/mlops.md'
     - Deep Learning: 'ML/deep_learning.md'
