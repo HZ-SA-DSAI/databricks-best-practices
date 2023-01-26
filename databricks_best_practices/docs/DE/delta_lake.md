@@ -1,11 +1,13 @@
 ***
 # Delta Lake
 
-**Updated on 01/04/2023**
+**Updated on 01/25/2023**
 
 *See below for original doc on docs.databricks.com*
 
 *[Best practices: Delta Lake](https://docs.databricks.com/delta/best-practices.html#best-practices-delta-lake)*
+
+*[When to partition tables on Databricks](https://docs.databricks.com/tables/partitions.html#when-to-partition-tables-on-databricks)*
 
 1. [Provide data location hints](https://docs.databricks.com/delta/best-practices.html#provide-data-location-hints)
     
@@ -51,3 +53,23 @@
     If your Structured Streaming workloads don’t have low latency requirements (subminute latencies), you can enable enhanced checkpoints. 
 
     Databricks does not recommend disabling enhanced checkpoints as no statistics will be collected or written for data skipping purposes. 
+
+11. [Best Practices on Partitioning](https://docs.databricks.com/tables/partitions.html#when-to-partition-tables-on-databricks)
+
+    1. Because of built-in features and optimizations, most tables with less than 1 TB of data do not require partitions.
+    2. Databricks recommends all partitions contain at least a gigabyte of data. Tables with fewer, larger partitions tend to outperform tables with many smaller partitions.
+    3. By using Delta Lake and Databricks Runtime 11.2 or above, unpartitioned tables you create benefit automatically from [ingestion time clustering](https://www.databricks.com/blog/2022/11/18/introducing-ingestion-time-clustering-dbr-112.html). Ingestion time provides similar query benefits to partitioning strategies based on datetime fields without any need to optimize or tune your data.
+
+        To maintain ingestion time clustering when you perform a large number of modifications using UPDATE or MERGE statements on a table, Databricks recommends running OPTIMIZE with ZORDER BY using a column that matches the ingestion order. For instance, this could be a column containing an event timestamp or a creation date.
+
+        Some experienced users of Apache Spark and Delta Lake might be able to design and implement a pattern that provides better performance than ingestion time clustering. Implementing a bad partitioning stategy can have very negative repercussions on downstream performance and might require a full rewrite of data to fix. Databricks recommends that most users use default settings to avoid introducing expensive inefficiencies.
+
+    4. You can use Z-order indexes alongside partitions to speed up queries on large datasets. However, most tables can leverage ingestion time clustering to avoid needing to worry about Z-order and partition tuning.
+
+        1. Z-order works in tandem with the OPTIMIZE command. You cannot combine files across partition boundaries, and so Z-order clustering can only occur within a partition. For unpartitioned tables, files can be combined across the entire table.
+        2. Partitioning works well only for low or known cardinality fields (for example, date fields or physical locations), but not for fields with high cardinality such as timestamps. Z-order works for all fields, including high cardinality fields and fields that may grow infinitely (for example, timestamps or the customer ID in a transactions or orders table).
+        3. You cannot Z-order on fields used for partitioning.
+
+    4. Differences regarding partitions between Delta Lake and other data lakes
+        1. Transactions are not defined by partition boundaries. Delta Lake ensures [ACID](https://docs.databricks.com/lakehouse/acid.html) through transaction logs, so you do not need to separate a batch of data by a partition to ensure atomic discovery.
+        2. Databricks compute clusters do not have data locality tied to physical media. Data ingested into the lakehouse is stored in cloud object storage. While data is cached to local disk storage during data processing, Databricks uses file-based statistics to identify the minimal amount of data for parallel loading.

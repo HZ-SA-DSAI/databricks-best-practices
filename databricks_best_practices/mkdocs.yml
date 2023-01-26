@@ -8,13 +8,16 @@ nav:
     - Delta Live Tables Cookbook: 'DE/dlt_cookbook.md'
     - Clone: 'DE/clone.md'
     - Optimization Recommendations: 'DE/optimization.md'
+    - Migration for ETL: 'DE/de_migration.md'
+  - SQL:
+    - SQL Warehouses: 'SQL/warehouses.md'
+    - Queries: 'SQL/queries.md'
+    - Migration for SQL Warehouse: 'SQL/sql_migration.md'
   - Machine Learning:
     - MLOps: 'ML/mlops.md'
     - Deep Learning: 'ML/deep_learning.md'
     - Hyperparameter tuning with Hyperopt: 'ML/hyperparameter_tuning.md'
-  - SQL:
-    - SQL Warehouses: 'SQL/warehouses.md'
-    - Queries: 'SQL/queries.md'
+    - Migration for ML: 'ML/ml_migration.md'
   - Unity Catalog & Admin:
     - Unity Catalog: 'UC/uc.md'
     - Identity: 'UC/identity.md'
