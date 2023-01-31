@@ -21,9 +21,10 @@ nav:
   - Unity Catalog & Admin:
     - Unity Catalog: 'UC/uc.md'
     - Identity: 'UC/identity.md'
-  - Cluster Management:
+  - Cluster & Cost Management:
     - Cluster Configuration: 'Cluster/cluster_configuration.md'
     - Pools: 'Cluster/pools.md'
+    - Cost Management: 'Cluster/cost_management.md'
   - Development:
     - CI/CD: 'Dev/cicd.md'
     - Notebook Usage: 'Dev/notebook.md'
